@@ -1,6 +1,6 @@
 {
   "name": "grapick",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "Easy configurable gradient picker, with no dependencies",
   "author": "Artur Arseniev",
   "main": "src/index.js",
@@ -16,7 +16,7 @@
   },
   "scripts": {
     "lint": "eslint src",
-    "build": "cross-env WEBPACK_ENV=prod && npm run lint && npm run test && npm run v:patch && webpack --display-modules && npm run build:css",
+    "build": "cross-env WEBPACK_ENV=prod ",
     "build:css": "node-sass src/styles/main.scss dist/grapick.min.css --output-style compressed",
     "v:patch": "npm version --no-git-tag-version patch",
     "start": "cross-env WEBPACK_ENV=dev webpack-dev-server --progress --colors & npm run build:css -- -w",
