@@ -47,9 +47,6 @@ export default class Grapick extends EventEmitter {
 
       // Gradient input width, default: '100%'
       width: '100%',
-      
-      // Max handlers , default 3
-      maxHandlers: 3
     };
 
     for (let name in defaults) {
@@ -308,9 +305,6 @@ export default class Grapick extends EventEmitter {
    * @return {Object} Handler object
    */
   addHandler(position, color, select = 1, options = {}) {
-    if(this.handlers.length >= this.options.maxHandlers){
-      return ;
-    }
     const handler = new Handler(this, position, color, select);
     !options.silent && this.emit('handler:add', handler);
     return handler;
