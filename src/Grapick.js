@@ -219,6 +219,20 @@ export default class Grapick extends EventEmitter {
     return handlers.map(handler => handler.getValue()).join(', ');
   }
 
+  /**
+   * Get only colors values
+   * @return {Array}
+   * @example
+   * const ga = new Grapick({...});
+   * ga.addHandler(0, '#000');
+   * ga.addHandler(55, 'white');
+   * console.log(ga.getColorValues());
+   * // -> `['#000' , 'white']`
+   */
+  getColorValues() {
+    let handlers = this.handlers | [];
+    return handlers.map(handler => handler.getColor());
+  }
 
   /**
    * Get an array with browser specific values
